@@ -14,6 +14,9 @@ public class A2798 {
 
     int N=Integer.parseInt(st.nextToken()); //몇장 뽑을건지
     int M=Integer.parseInt(st.nextToken()); //세수의합이 M이하여함
+    
+    //32 32 23 23 
+    
     int[] arr=new int[N];
 
     int total=0;
@@ -29,8 +32,7 @@ public class A2798 {
     for(int k=0; k<N-2; k++) {
       //두번째카드
       for(int l=k+1; l<N-1; l++) {
-        //세번째카드
-        for(int m=l+1; m<N; m++) {
+        for(int m=l+1; m<N; m++) { 
 
           //세카드의 합이 M보다 작거나 같을때?
           if(total<(arr[k]+arr[l]+arr[m]) && (arr[k]+arr[l]+arr[m])<=M) {

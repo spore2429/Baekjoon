@@ -18,16 +18,19 @@ public class A2745 {
 
     //합계
     int sum = 0;
-    //진법의 제곱수 ex)2의 0제곱 = 1
+    
+    //진법의 제곱수
     int count = 1;
 
+    //char char1 = '5';
+    //char char2 = 'A';
+    
     // 오른쪽부터셈
     for (int i = N.length() - 1; i >= 0; i--) {
       //입력한 String값을 문자로 전환
       char charN = N.charAt(i);
       //문자로 전환한 값을 다시 숫자로전환
       int intN = 0;
-      
       //isDigit 함수는 문자가 숫자인지 확인
       //true
       if (Character.isDigit(charN)) {
@@ -39,8 +42,8 @@ public class A2745 {
         intN = charN - 'A' + 10;
       }
       //합을 먼저 누적을시키고 count를 곱해야함 count먼저 계산하면 초기값이 바뀜
-      sum += intN * count;
-      count *= B;
+      sum += intN * count; //Z=35 B=36 	1. 35*1   2. 35*36    3. 35*36*36
+      count *= B; //   1. 36*1   2.36*1*26
     }
 
     System.out.println(sum);
